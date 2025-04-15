@@ -30,6 +30,7 @@ export class ChatService {
   ];
 
   getReply(message: string): string {
+    message = message.toLowerCase();
     for (const { pattern, reply } of this.responses) {
       if (pattern.test(message)) {
         return reply;
